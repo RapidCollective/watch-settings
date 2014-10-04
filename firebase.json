@@ -1,0 +1,26 @@
+{
+    "apps": {
+        "watch-coffee": {
+            "configuration": {
+                "landing": {
+                    "copy": "We need you to log into your Starbucks account so we can display your barcode.",
+                    "image": "lock",
+                    "lastSaved": "timestamp",
+                    "provider": "Starbucks",
+                    "redirectHref": "https://connect.starbucks.com/OAuth/sign-in"
+                }
+            },
+            "id": "watch-coffee",
+            "userRef": "simplelogin:30"
+        }
+    },
+    "users": {
+        "simplelogin:30": {
+            "appsRef": [ "watch-coffee" ],
+            "email": "case@casesandberg.com",
+            "id": 30,
+            "provider": "password",
+            "uid": "simplelogin:30"
+        }
+    }
+}

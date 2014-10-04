@@ -3,6 +3,8 @@
 var watchSettings = angular.module('watchSettings', [
 	'ngRoute',
 	'ngAnimate',
+	'firebase',
+	'global',
 	'home'
 ])
 
@@ -13,6 +15,14 @@ watchSettings.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'home/home.html',
         controller: 'HomeCtrl'
     })
+	.when('/log-in', {
+		templateUrl: 'home/log-in.html',
+		controller: 'HomeCtrl'
+	})
+	.when('/sign-up', {
+		templateUrl: 'home/sign-up.html',
+		controller: 'HomeCtrl'
+	})
     .otherwise({
         redirectTo: '/'
     });
