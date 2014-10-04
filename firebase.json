@@ -12,9 +12,29 @@
             },
             "id": "watch-coffee",
             "userRef": "simplelogin:30"
+        },
+        "ttmm": {
+            "configuration": {
+                "landing": {
+                    "copy": "We need you to log into your TTMM account so we can find your watch faces.",
+                    "image": "lock",
+                    "lastSaved": "timestamp",
+                    "provider": "TTMM",
+                    "redirectHref": "https://blah.blah/oauth"
+                }
+            },
+            "id": "ttmm",
+            "userRef": "simplelogin:1"
         }
     },
     "users": {
+        "simplelogin:1": {
+            "appsRef": [ "ttmm" ],
+            "email": "case@casesandberg.com",
+            "id": 30,
+            "provider": "password",
+            "uid": "simplelogin:1"
+        },
         "simplelogin:30": {
             "appsRef": [ "watch-coffee" ],
             "email": "case@casesandberg.com",
