@@ -3,27 +3,28 @@
         "watch-coffee": {
             "configuration": {
                 "landing": {
+                    "color": "ef4121",
                     "copy": "We need you to log into your Starbucks account so we can display your barcode.",
-                    "image": "lock",
-                    "lastSaved": "timestamp",
-                    "provider": "Starbucks",
-                    "redirectHref": "https://connect.starbucks.com/OAuth/sign-in"
+                    "image": "images/combo-lock.svg",
+                    "lastSaved": "timestamp"
                 }
             },
             "id": "watch-coffee",
+            "name": "Watch Coffee",
             "userRef": "simplelogin:30"
         },
         "ttmm": {
             "configuration": {
                 "landing": {
                     "copy": "We need you to log into your TTMM account so we can find your watch faces.",
-                    "image": "lock",
+                    "image": "images/globe.svg",
                     "lastSaved": "timestamp",
                     "provider": "TTMM",
                     "redirectHref": "https://blah.blah/oauth"
                 }
             },
             "id": "ttmm",
+            "name": "TTMM",
             "userRef": "simplelogin:1"
         }
     },

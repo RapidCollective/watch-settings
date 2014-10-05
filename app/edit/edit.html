@@ -1,0 +1,61 @@
+<div class="edit">
+
+    <div class="edit-head">
+        <input type="text" class="head-title" ng-model="name">
+        <div class="head-url">http://{{app.id}}.watchsettings.com/</div>
+    </div>
+
+    <ul class="edit-pages">
+        <li class="page landing-page">
+
+            <div class="page-sim">
+                <div class="sim-screen">
+                    <div class="screen-head">
+                        <div class="head-title">{{name}}</div>
+                    </div>
+
+                    <div class="screen-body" style="background-color: #{{landing.color}}">
+
+                        <div class="body-image">
+                            <img class="image" ng-src="{{landing.image}}">
+                        </div>
+
+                        <p class="body-copy">{{landing.copy}}</p>
+
+                        <a href="" class="body-cta">Sign In<span ng-show="landing.provider">to {{landing.provider}}</span></a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-change">
+
+                <div class="label">Settings Color</div>
+
+                <ul class="change-colors">
+                    <li class="color" ng-class="{ 'active-color' : landing.color === color}" ng-repeat="color in colorOptions" ng-click="changeColor(color)" style="background-color: #{{color}}"></li>
+                </ul>
+
+                <div class="label">Landing Image</div>
+
+                <ul class="change-images">
+                    <li class="image" ng-class="{ 'active-image' : landing.image === image}" ng-repeat="image in imageOptions" ng-click="changeImage(image)" style="background-color: #{{landing.color}}">
+                        <img src="{{image}}">
+                    </li>
+                </ul>
+
+                <div class="label">Landing Description</div>
+
+                <textarea ng-model="landing.copy" class="change-copy"></textarea>
+
+                <div class="label">Provider</div>
+
+                <input type="text" ng-model="landing.provider" class="change-provider" placeholder="Service Name">
+                <input type="text" ng-model="landing.redirectHref" class="change-redirect" placeholder="http://service.com/oauth">
+            </div>
+        </li>
+    </ul>
+
+
+
+</div>

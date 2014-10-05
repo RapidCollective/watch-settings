@@ -1,0 +1,218 @@
+@import '../global/mixins.less';
+
+
+.edit{
+    background: #ddd;
+}
+
+.edit-head{
+    width: 690px;
+    margin: 0 auto;
+    padding: 40px 0;
+
+    .head-title{
+        height: 64px;
+        width: 96%;
+        padding: 0 2%;
+        .font(48, 200);
+        background: transparent;
+        border: none;
+        .border-radius(6px);
+        color: #333;
+
+        .transition(background 200ms linear);
+
+        &:hover{
+            background: #fff;
+        }
+    }
+    .head-url{
+        margin: 5px 0 0 15px;
+        color: #999;
+        .font(17, 400);
+    }
+}
+
+.edit-pages{
+    width: 690px;
+    margin: 0 auto;
+
+    .page{
+        .clearfix();
+        padding: 0 0 100px;
+
+        &.landing-page{
+
+        }
+
+        .page-sim{
+            padding: 90px 15px;
+            background: #111;
+            float: left;
+            .border-radius(40px);
+            box-shadow: 0 0 0 2px #aaa;
+
+            .sim-screen{
+                width: 320px;
+                height: 568px;
+                background: #222;
+                position: relative;
+
+                .screen-head{
+                    height: 64px;
+                    background-image: url('../images/watch-settings-app-head.png');
+                    background-size: 100%;
+
+                    .head-title{
+                        .font(17, 400);
+                        color: #fff;
+                        position: absolute;
+                        text-transform: uppercase;
+                        width: 100%;
+                        margin: 20px 0 0;
+                        height: 44px;
+                        line-height: 44px;
+                        text-align: center;
+                    }
+                }
+                .screen-body{
+                    position: absolute;
+                    top: 66px;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    .border-radius(6px);
+                    .transition(background 200ms linear);
+
+                    .body-image{
+                        margin: 70px 0 0;
+                        text-align: center;
+
+                        .image{
+                            height: 170px;
+                            opacity: .3;
+                        }
+                    }
+                    .body-copy{
+                        padding: 50px 30px 0;
+                        .font(19, 400);
+                        line-height: 24px;
+                        color: rgba(0,0,0,.4);
+                        text-align: center;
+                    }
+                    .body-cta{
+                        position: absolute;
+                        bottom: 30px;
+                        left: 30px;
+                        right: 30px;
+                        height: 44px;
+                        line-height: 44px;
+                        background: #fff;
+                        .border-radius(4px);
+                        box-shadow: 0 3px 5px rgba(0,0,0,.2);
+                        .font(17, 500);
+                        color: #333;
+                        text-align: center;
+                        text-transform: uppercase;
+                        text-decoration: none;
+
+                        span{
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-change{
+            float: left;
+            width: 300px;
+            margin: 40px 0 0 40px;
+
+            .label{
+                .font(17, 400);
+                color: #999;
+                margin: 0 0 10px;
+            }
+
+            input{
+                width: 92%;
+                padding: 0 4%;
+                height: 44px;
+                line-height: 44px;
+                border: none;
+                .font(19, 400);
+            }
+
+            .change-colors{
+                margin: 0 0 10px;
+                .clearfix();
+
+                .color{
+                    float: left;
+                    width: 16%;
+                    padding-bottom: 16%;
+                    margin: 0 5% 5% 0;
+                    .border-radius(6px);
+                    cursor: pointer;
+
+                    &:nth-child(5n){
+                        margin: 0 0 5%;
+                    }
+                }
+            }
+
+            .change-images{
+                margin: 0 0 10px;
+                .clearfix();
+
+                .image{
+                    float: left;
+                    width: 30%;
+                    padding-bottom: 30%;
+                    position: relative;
+                    margin: 0 5% 5% 0;
+                    .border-radius(6px);
+                    cursor: pointer;
+
+                    .transition(background 200ms linear);
+
+                    &.active-image{
+                        background-color: #ccc!important;
+                    }
+
+                    &:nth-child(3n){
+                        margin: 0 0 5%;
+                    }
+
+                    img{
+                        opacity: .3;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        -webkit-transform: translate(-50%, -50%);
+                    }
+                }
+            }
+            .change-copy{
+                margin: 0 0 20px;
+                width: 260px;
+                padding: 20px;
+                border: none;
+                margin: 0 0 20px;
+                .font(19, 400);
+                line-height: 24px;
+                text-align: center;
+                height: 75px;
+                .border-radius(6px);
+            }
+            .change-provider{
+                margin: 0 0 1px;
+                .border-radius(6px 6px 0 0);
+            }
+            .change-redirect{
+                .border-radius(0 0 6px 6px);
+            }
+        }
+    }
+}

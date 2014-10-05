@@ -6,7 +6,8 @@ var watchSettings = angular.module('watchSettings', [
 	'firebase',
 	'global',
 	'home',
-	'dashboard'
+	'dashboard',
+	'edit'
 ])
 
 watchSettings.config(['$routeProvider', function($routeProvider) {
@@ -27,6 +28,10 @@ watchSettings.config(['$routeProvider', function($routeProvider) {
 	.when('/dashboard', {
 		templateUrl: 'dashboard/dashboard.html',
 		controller: 'DashboardCtrl'
+	})
+	.when('/edit/:appId', {
+		templateUrl: 'edit/edit.html',
+		controller: 'EditCtrl'
 	})
     .otherwise({
         redirectTo: '/'
