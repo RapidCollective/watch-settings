@@ -1,9 +1,18 @@
-<div class="edit">
-
-    <div class="edit-head">
-        <input type="text" class="head-title" ng-model="name">
-        <div class="head-url">http://{{app.id}}.watchsettings.com/</div>
+<div class="header">
+    <div class="header-logo">
+        <img src="images/header-logo.svg">
+        <span>WatchSettings</span>
     </div>
+    <div class="header-toggle">
+        <span>{{name}}</span>
+        <div class="arrow"></div>
+    </div>
+    <div class="header-settings">
+        <span>Account</span>
+    </div>
+</div>
+
+<div class="edit">
 
     <ul class="edit-pages">
 
@@ -155,7 +164,7 @@
                 <div class="label">Add Items</div>
 
                 <ul class="change-add">
-                    <li class="add title-add">
+                    <li class="add title-add" ng-click="add('title')">
                         <div class="add-icon">
                             <div class="icon">
                                 <span>T</span>
@@ -163,7 +172,7 @@
                         </div>
                         <div class="add-label">title</div>
                     </li>
-                    <li class="add text-add">
+                    <li class="add text-add" ng-click="add('text')">
                         <div class="add-icon">
                             <div class="icon">
                                 <span>Ab</span>
@@ -171,7 +180,7 @@
                         </div>
                         <div class="add-label">text</div>
                     </li>
-                    <li class="add toggle-add">
+                    <li class="add toggle-add" ng-click="add('toggle')">
                         <div class="add-icon">
                             <div class="icon">
                                 <div></div>
@@ -179,7 +188,7 @@
                         </div>
                         <div class="add-label">toggle</div>
                     </li>
-                    <li class="add radio-add">
+                    <li class="add radio-add" ng-click="add('radio')">
                         <div class="add-icon">
                             <div class="icon">
                                 <div></div>
@@ -189,7 +198,7 @@
                         </div>
                         <div class="add-label">radio</div>
                     </li>
-                    <li class="add input-add">
+                    <li class="add input-add" ng-click="add('input')">
                         <div class="add-icon">
                             <div class="icon">
                                 <span>In</span>

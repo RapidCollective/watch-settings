@@ -39,45 +39,56 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
             "name": "Show Ads",
             "id": "showAds"
         }
-    },
-    {
-        "type": "title",
-        "data": {
-            "value": "Color"
-        }
-    },
-    {
-        "type": "radio",
-        "data": {
-            "options": [{
-                "name": "Blue",
-                "id": "blue"
-            },
-            {
-                "name": "Green",
-                "id": "green",
-                "checked": "checked"
-            },
-            {
-                "name": "Red",
-                "id": "red"
-            }]
-        }
-    },
-    {
-        "type": "title",
-        "data": {
-            "value": "Some Setting"
-        }
-    },
-    {
-        "type": "input",
-        "data": {
-            "value": "Case Sandberg",
-            "placeholder": "Your Name",
-            "id": "name"
-        }
     }];
+
+
+    $scope.settingsDesigns = {
+        "title": {
+            "type": "title",
+            "data": {
+                "value": ""
+            }
+        },
+        "text": {
+            "type": "text",
+            "data": {
+                "value": ""
+            }
+        },
+        "toggle": {
+            "type": "toggle",
+            "data": {
+                "name": "",
+                "id": ""
+            }
+        },
+        "radio": {
+            "type": "radio",
+            "data": {
+                "options": [{
+                    "name": "",
+                    "id": ""
+                },
+                {
+                    "name": "",
+                    "id": "",
+                    "checked": ""
+                }]
+            }
+        },
+        "input": {
+            "type": "input",
+            "data": {
+                "value": "",
+                "placeholder": "",
+                "id": ""
+            }
+        }
+    };
+
+    $scope.add = function(type){
+        $scope.settingsList.push($scope.settingsDesigns[type]);
+    }
 
 
     $scope.delete = function(index){
