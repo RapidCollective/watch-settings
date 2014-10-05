@@ -2,19 +2,6 @@
 
 angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParams', function($scope, App, $routeParams){
 
-    // $scope.apps = App.getAll();
-
-    // // Set experience on experiences load promise
-    // $scope.experiences.$on('loaded', function(){
-    //
-    //     if(!!$scope.experiences[$routeParams.slug]){
-    //         $scope.experience = $scope.experiences[$routeParams.slug];
-    //         $scope.experienceState = $scope.experience.state;
-    //     } else {
-    //         // $location.path('/dashboard');
-    //     }
-    // });
-
     $scope.app = App.findById($routeParams.appId);
 
     $scope.imageOptions = [
@@ -23,7 +10,8 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
         "images/gear.svg",
         "images/keyhole.svg",
         "images/locked.svg",
-        "images/cloud.svg" ];
+        "images/cloud.svg"
+    ];
 
     $scope.colorOptions = [
         "ef4121",
@@ -31,7 +19,70 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
         "C0392B",
         "8E44AD",
         "2C3E50"
-    ]
+    ];
+
+    $scope.settingsList = [{
+        "type": "title",
+        "data": {
+            "value": "Settings"
+        }
+    },
+    {
+        "type": "text",
+        "data": {
+            "value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+    },
+    {
+        "type": "toggle",
+        "data": {
+            "name": "Show Ads",
+            "id": "showAds"
+        }
+    },
+    {
+        "type": "title",
+        "data": {
+            "value": "Color"
+        }
+    },
+    {
+        "type": "radio",
+        "data": {
+            "options": [{
+                "name": "Blue",
+                "id": "blue"
+            },
+            {
+                "name": "Green",
+                "id": "green",
+                "checked": "checked"
+            },
+            {
+                "name": "Red",
+                "id": "red"
+            }]
+        }
+    },
+    {
+        "type": "title",
+        "data": {
+            "value": "Some Setting"
+        }
+    },
+    {
+        "type": "input",
+        "data": {
+            "value": "Case Sandberg",
+            "placeholder": "Your Name",
+            "id": "name"
+        }
+    }];
+
+
+    $scope.delete = function(index){
+        delete $scope.settingsList[index];
+    }
 
     $scope.changeImage = function(href){
         $scope.landing.image = href;

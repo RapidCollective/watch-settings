@@ -3,6 +3,7 @@
 var watchSettings = angular.module('watchSettings', [
 	'ngRoute',
 	'ngAnimate',
+	'ngRepeatReorder',
 	'firebase',
 	'global',
 	'home',
