@@ -17,7 +17,7 @@
     <ul class="edit-pages">
 
 
-        <!--<li class="page landing-page">
+        <li class="page landing-page">
             <div class="page-sim">
                 <div class="sim-screen">
                     <div class="screen-head">
@@ -94,7 +94,7 @@
                 <input type="text" class="change-redirect" value="http://{{app.id}}.watchsettings.com/settings" readonly>
 
             </div>
-        </li> -->
+        </li>
 
         <li class="page settings-page">
             <div class="page-sim">
@@ -213,29 +213,29 @@
                     <li ng-repeat-reorder="setting in settingsList" ng-repeat-reorder-handle=".handle" class="setting {{setting.type}}-setting" ng-show="setting.type">
 
                         <div ng-show="setting.type == 'title'">
-                            <input type="text" class="title-input" placeholder="Title" value="{{setting.data.value}}">
+                            <input type="text" class="title-input" placeholder="Title" ng-model="setting.data.value">
                         </div>
 
                         <div ng-show="setting.type == 'text'">
-                            <textarea class="text-textarea" placeholder="Paragraph text">{{setting.data.value}}</textarea>
+                            <textarea class="text-textarea" placeholder="Paragraph text" ng-model="setting.data.value"></textarea>
                         </div>
 
                         <div ng-show="setting.type == 'toggle'">
-                            <input type="text" class="toggle-name" placeholder="Toggle Name" value="{{setting.data.name}}">
+                            <input type="text" class="toggle-name" placeholder="Toggle Name" ng-model="setting.data.name">
                             <input type="text" class="toggle-id" placeholder="ID" value="{{setting.data.id}}">
                         </div>
 
                         <div ng-show="setting.type == 'radio'">
                             <ul>
                                 <li class="radio" ng-repeat="option in setting.data.options">
-                                    <input type="text" class="radio-name" placeholder="Radio #1 Name" value="{{option.name}}">
+                                    <input type="text" class="radio-name" placeholder="Radio #1 Name" ng-model="option.name">
                                     <input type="text" class="radio-id" placeholder="ID" value="{{option.id}}">
                                 </li>
                             </ul>
                         </div>
 
                         <div ng-show="setting.type == 'input'">
-                            <input type="text" class="input-placeholder" placeholder="Placeholder" value="{{setting.data.placeholder}}">
+                            <input type="text" class="input-placeholder" placeholder="Placeholder" ng-model="setting.data.placeholder">
                             <input type="text" class="input-id" placeholder="ID" value="{{setting.data.id}}">
                         </div>
 
@@ -251,6 +251,13 @@
                     </li>
                 </ul>
 
+
+            </div>
+
+
+            <div class="save-setttings">
+
+                <a href="">SAVE</a>
 
             </div>
         </li>

@@ -1,6 +1,9 @@
 'use strict';
 
-angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParams', function($scope, App, $routeParams){
+angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParams', '$firebase', function($scope, App, $routeParams, $firebase){
+
+    var devicesRef = new Firebase('https://watch-settings.firebaseio.com/apps/' + $routeParams.appId + '/settingsList');
+    $scope.fbSettings = $firebase(devicesRef);
 
     $scope.app = App.findById($routeParams.appId);
 
@@ -24,7 +27,8 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
     $scope.settingsList = [{
         "type": "title",
         "data": {
-            "value": "Settings"
+            "value": "Settings",
+            "id": "title-1"
         }
     },
     {
@@ -85,6 +89,8 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
             }
         }
     };
+
+    // $scope.fbSettings.$bind($scope, 'settingsList');
 
     $scope.add = function(type){
         $scope.settingsList.push($scope.settingsDesigns[type]);
