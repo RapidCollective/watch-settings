@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{name}}</title>
+
+    <link href="reset.css" rel="stylesheet" />
+    <link href="landing-page.css" rel="stylesheet" />
+</head>
+<body>
+
+    <script id="landing-page" type="text/x-handlebars-template">
+
+        <div class="landing-body">
+
+            <ul class="body-lists">
+
+                {{#list settingsList}}
+                    <li class="list {{type}}-list">
+
+                        {{#ifvalue type value="title"}}
+                            <div class="list-title">{{data.value}}</div>
+                        {{/ifvalue}}
+
+                        {{#ifvalue type value="text"}}
+                            <p class="list-text">{{data.value}}</p>
+                        {{/ifvalue}}
+
+                        {{#ifvalue type value="toggle"}}
+
+                            <div class="list-toggle">
+                                <div class="toggle-name">{{data.name}}</div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="switch" class="switch">
+                                    <label for="switch" class="switch-bg" style="background: #{{landing.color}}">
+                                        <span class="switch-tab"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        {{/ifvalue}}
+
+                        {{#ifvalue type value="radio"}}
+                            <ul class="list-radio">
+
+                                {{#list data.options}}
+                                <li class="radio">
+
+                                    <div class="radio-name">{{name}}</div>
+                                    <input type="radio" name="color" value="{{id}}" checked="{{checked}}">
+                                    <div class="radio-box" style="background: #{{landing.color}}"></div>
+
+                                </li>
+                                {{/list}}
+
+                            </ul>
+                        {{/ifvalue}}
+
+                        {{#ifvalue type value="input"}}
+                            <div class="list-input">
+                                <input type="text" class="input" placeholder="{{data.placeholder}}">
+                            </div>
+                        {{/ifvalue}}
+
+                        <div class="handle">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </li>
+                {{/list}}
+
+            </ul>
+
+        </div>
+
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+
+        $(function(){
+
+            var settingsList = [{
+                "type": "title",
+                "data": {
+                    "value": "Settings"
+                }
+            },
+            {
+                "type": "text",
+                "data": {
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                }
+            },
+            {
+                "type": "toggle",
+                "data": {
+                    "name": "Show Ads",
+                    "id": "showAds"
+                }
+            }];
+
+            Handlebars.registerHelper('list', function(items, options) {
+                var out = '';
+                if(!items){
+                    items = settingsList
+                }
+
+                for(var i=0, l=items.length; i<l; i++) {
+                    out = out + options.fn(items[i]);
+                }
+
+                return out;
+            });
+            Handlebars.registerHelper('ifvalue', function (conditional, options) {
+                if (options.hash.value === conditional) {
+                    return options.fn(this)
+                } else {
+                    return options.inverse(this);
+                }
+            });
+
+            var source = $('#landing-page').html();
+            var template = Handlebars.compile(source);
+            $('body').html(template);
+
+        });
+
+    </script>
+
+</body>
+</html>

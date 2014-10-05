@@ -1,0 +1,184 @@
+html, body{
+  background: #333;
+}
+.landing-body{
+  background: #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.list .list-title {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  color: #6e6d73;
+  line-height: 14px;
+  padding: 20px 0 8px 15px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
+}
+.list .list-text {
+  padding: 13px 15px;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 15px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+.list .list-toggle {
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 17px;
+  font-size: 1.7rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 15px;
+  position: relative;
+}
+.list .list-toggle .toggle-switch {
+  position: absolute;
+  top: 7px;
+  right: 15px;
+}
+.list .list-toggle .toggle-switch .switch {
+  position: absolute;
+  z-index: 2;
+  width: 50px;
+  height: 30px;
+  opacity: 0;
+}
+.list .list-toggle .toggle-switch .switch-bg {
+  width: 50px;
+  height: 30px;
+  display: block;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: relative;
+  -webkit-transition: background 200ms linear;
+  -moz-transition: background 200ms linear;
+  -o-transition: background 200ms linear;
+  transition: background 200ms linear;
+}
+.list .list-toggle .toggle-switch .switch:not(:checked) + .switch-bg {
+  background: #ccc!important;
+}
+.list .list-toggle .toggle-switch .switch-tab {
+  height: 26px;
+  width: 26px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  -webkit-transition: -webkit-transform 200ms linear;
+  -moz-transition: -webkit-transform 200ms linear;
+  -o-transition: -webkit-transform 200ms linear;
+  transition: -webkit-transform 200ms linear;
+}
+.list .list-toggle .toggle-switch .switch:checked + .switch-bg .switch-tab {
+  -webkit-transform: translateX(20px);
+}
+.list .list-input {
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  position: relative;
+  padding: 4px;
+}
+.list .list-input .input {
+  padding: 0 4%;
+  width: 91%;
+  height: 36px;
+  line-height: 36px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 17px;
+  font-size: 1.7rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+.list .list-radio .radio {
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 17px;
+  font-size: 1.7rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 15px;
+  position: relative;
+}
+.list .list-radio input {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 44px;
+  opacity: 0;
+  z-index: 2;
+}
+.list .list-radio .radio-box {
+  position: absolute;
+  top: 7px;
+  right: 15px;
+  height: 30px;
+  width: 30px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transition: background 200ms linear;
+  -moz-transition: background 200ms linear;
+  -o-transition: background 200ms linear;
+  transition: background 200ms linear;
+}
+.list .list-radio .radio-box:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  top: 12px;
+  left: 12px;
+  -webkit-transition: -webkit-transform 200ms linear;
+  -moz-transition: -webkit-transform 200ms linear;
+  -o-transition: -webkit-transform 200ms linear;
+  transition: -webkit-transform 200ms linear;
+}
+.list .list-radio input:not(:checked) + .radio-box {
+  background: #ccc!important;
+}
+.list .list-radio input:not(:checked) + .radio-box:before {
+  -webkit-transform: scale(0);
+}
