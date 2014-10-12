@@ -5,6 +5,8 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
     // var devicesRef = new Firebase('https://watch-settings.firebaseio.com/apps/' + $routeParams.appId + '/settingsList');
     // $scope.fbSettings = $firebase(devicesRef);
 
+    $scope.tab = $routeParams.tab;
+
     $scope.app = App.findById($routeParams.appId);
 
     $scope.imageOptions = [

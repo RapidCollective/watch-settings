@@ -1,6 +1,6 @@
-<div class="header">
+<!-- <div class="header">
     <div class="header-logo">
-        <img src="images/header-logo.svg">
+        <img ng-src="images/header-logo.svg">
         <span>WatchSettings</span>
     </div>
     <div class="header-toggle">
@@ -10,14 +10,47 @@
     <div class="header-settings">
         <span>Account</span>
     </div>
-</div>
+</div> -->
 
 <div class="edit">
 
-    <ul class="edit-pages">
+    <div class="edit-navigation">
+        <div class="navigation-switch">
+            <ul class="switch-apps">
+                <li class="app current-app">
+                    <a href="">Watch Coffee</a>
+                </li>
+
+                <li class="app other-app">
+                    <a href="">Watchface</a>
+                </li>
+
+                <li class="app other-app add-app">
+                    <a href="">Add New</a>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="navigation-tabs">
+            <li class="tab landing-tab" ng-class="{active: tab == 'landing'}">
+                <a href="#/edit/{{app.id}}/landing">Landing</a>
+            </li>
+            <li class="tab oauth-tab" ng-class="{active: tab == 'oauth'}">
+                <a href="#/edit/{{app.id}}/oauth">OAuth</a>
+            </li>
+            <li class="tab settings-tab" ng-class="{active: tab == 'settings'}">
+                <a href="#/edit/{{app.id}}/settings">Settings</a>
+            </li>
+            <li class="tab review-tab"  ng-class="{active: tab == 'review'}">
+                <a href="#/edit/{{app.id}}/review">Review & Code</a>
+            </li>
+        </ul>
+    </div>
+
+    <ul ng-switch on="tab" class="edit-pages">
 
 
-        <!-- <li class="page landing-page">
+        <li class="page landing-page" ng-switch-when="landing">
             <div class="page-sim">
                 <div class="sim-screen">
                     <div class="screen-head">
@@ -50,7 +83,7 @@
 
                 <ul class="change-images">
                     <li class="image" ng-class="{ 'active-image' : landing.image === image}" ng-repeat="image in imageOptions" ng-click="changeImage(image)" style="background-color: #{{landing.color}}">
-                        <img src="{{image}}">
+                        <img ng-src="{{image}}">
                     </li>
                 </ul>
 
@@ -66,7 +99,7 @@
         </li>
 
 
-        <li class="page oauth-page">
+        <li class="page oauth-page" ng-switch-when="oauth">
             <div class="page-sim">
                 <div class="sim-screen">
                     <div class="screen-head">
@@ -94,9 +127,9 @@
                 <input type="text" class="change-redirect" value="http://{{app.id}}.watchsettings.com/settings" readonly>
 
             </div>
-        </li> -->
+        </li>
 
-        <li class="page settings-page">
+        <li class="page settings-page" ng-switch-when="settings">
             <div class="page-sim">
                 <div class="sim-screen">
                     <div class="screen-head">
@@ -167,7 +200,7 @@
                     <li class="add title-add" ng-click="add('title')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img src="images/edit-title.svg">
+                                <img ng-src="images/edit-title.svg">
                             </div>
                         </div>
                         <div class="add-label">title</div>
@@ -175,7 +208,7 @@
                     <li class="add text-add" ng-click="add('text')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img src="images/edit-text.svg">
+                                <img ng-src="images/edit-text.svg">
                             </div>
                         </div>
                         <div class="add-label">text box</div>
@@ -183,7 +216,7 @@
                     <li class="add toggle-add" ng-click="add('toggle')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img src="images/edit-toggle.svg">
+                                <img ng-src="images/edit-toggle.svg">
                             </div>
                         </div>
                         <div class="add-label">toggle</div>
@@ -191,7 +224,7 @@
                     <li class="add radio-add" ng-click="add('radio')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img src="images/edit-radio.svg">
+                                <img ng-src="images/edit-radio.svg">
                             </div>
                         </div>
                         <div class="add-label">radio</div>
@@ -199,7 +232,7 @@
                     <li class="add input-add" ng-click="add('input')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img src="images/edit-input.svg">
+                                <img ng-src="images/edit-input.svg">
                             </div>
                         </div>
                         <div class="add-label">input</div>

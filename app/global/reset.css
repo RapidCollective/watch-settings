@@ -134,10 +134,8 @@ li{
     list-style-type:  none;
 }
 
-.left{
-    float: left;
-}
-
-.right{
-    float: right;
+a{
+    display: block;
+    text-decoration: none;
+    outline: none;
 }

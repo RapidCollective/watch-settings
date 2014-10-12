@@ -30,7 +30,7 @@ watchSettings.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'dashboard/dashboard.html',
 		controller: 'DashboardCtrl'
 	})
-	.when('/edit/:appId', {
+	.when('/edit/:appId/:tab', {
 		templateUrl: 'edit/edit.html',
 		controller: 'EditCtrl'
 	})

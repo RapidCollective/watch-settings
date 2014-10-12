@@ -20,12 +20,12 @@
 
 .border-radius (@radius: 4px) {
 	-webkit-border-radius: @radius;
-	-moz-border-radius:    @radius;
-	border-radius:         @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
 
-	-moz-background-clip:    padding;
+	-moz-background-clip: padding;
 	-webkit-background-clip: padding-box;
-	background-clip:         padding-box;
+	background-clip: padding-box;
 }
 
 .speed-up(){
@@ -46,18 +46,26 @@
 	transition+: @arguments;
 }
 
-.under(){
-	text-decoration: none;
-	&:hover{
-		text-decoration: underline;
-	}
+.rotate(@deg: 8){
+	transform+: rotate(~"@{deg}deg");
+	-ms-transform+: rotate(~"@{deg}deg");
+	-webkit-transform+: rotate(~"@{deg}deg");
+	-webkit-backface-visibility: hidden;
 }
 
-.rotate(@deg: 8deg){
-	transform:rotate(~"@{deg}deg");
-	-ms-transform:rotate(~"@{deg}deg");
-	-webkit-transform:rotate(~"@{deg}deg");
-	-webkit-backface-visibility: hidden;
+.scale(@ratio) {
+    -webkit-transform+: scale(@ratio);
+    -moz-transform+: scale(@ratio);
+    -ms-transform+: scale(@ratio);
+    -o-transform+: scale(@ratio);
+    transform+: scale(@ratio);
+}
+.translate(@x, @y) {
+    -webkit-transform+: translate(@x, @y);
+    -moz-transform+: translate(@x, @y);
+    -ms-transform+: translate(@x, @y);
+    -o-transform+: translate(@x, @y);
+    transform+: translate(@x, @y);
 }
 
 .font-size(@sizeValue) {
@@ -66,10 +74,11 @@
 	font-size: ~"@{pxValue}px";
 	font-size: ~"@{remValue}rem";
 }
-.font(@size: 15, @weight: 400){
+.font(@size: 15, @weight: 400, @lineheight: auto){
 	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	.font-size(@size);
 	font-weight: @weight;
+    line-height: @lineheight;
 	-webkit-font-smoothing: antialiased;
 }
 .box-shadow(@var){
@@ -85,87 +94,56 @@
     filter: ~"alpha(opacity = (@{opacityPercentage}))";
 }
 
-.animation(@name, @duration, @iteration, @direction){
-	-moz-animation-name: @name;
-	-webkit-animation-name: @name;
-	-ms-animation-name: @name;
-	-o-animation-name: @name;
-	animation-name: @name;
-
-	-moz-animation-duration: @duration;
-	-webkit-animation-duration: @duration;
-	-ms-animation-duration: @duration;
-	-o-animation-duration: @duration;
-	animation-duration: @duration;
-
-	-moz-animation-iteration-count: @iteration;
-	-webkit-animation-iteration-count: @iteration;
-	-ms-animation-iteration-count: @iteration;
-	-o-animation-iteration-count: @iteration;
-	animation-iteration-count: @iteration;
-
-	-moz-animation-direction: @direction;
-	-webkit-animation-direction: @direction;
-	-ms-animation-direction: @direction;
-	-o-animation-direction: @direction;
-	animation-direction: @direction;
-}
-.animation-delay(@delay){
-	-moz-animation-delay: @delay;
-	-webkit-animation-delay: @delay;
-	-ms-animation-delay: @delay;
-	-o-animation-delay: @delay;
-	animation-delay: @delay;
-}
-.keyframes(@name, @first){
-
-	@-moz-keyframes loading{
-		0%{
-			background-color: @first
-		}
-		100%{
-			background-color: transparent;
-		}
-	}
-
-	@-webkit-keyframes loading{
-		0%{
-			background-color: @first
-		}
-		100%{
-			background-color: transparent;
-		}
-	}
-
-	@-ms-keyframes loading{
-		0%{
-			background-color: @first
-		}
-		100%{
-			background-color: transparent;
-		}
-	}
-
-	@-o-keyframes loading{
-		0%{
-			background-color: @first
-		}
-		100%{
-			background-color: transparent;
-		}
-	}
-
-	@keyframes loading{
-		0%{
-			background-color: @first
-		}
-		100%{
-			background-color: transparent;
-		}
-	}
+.dotdotdot() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .ffont(@size, @weight){
 	.font(@size, @weight);
 	font-family: 'Fjalla One', sans-serif;
+}
+
+.fixed(@top, @right, @bottom, @left){
+    // @pos: ~'(function(arguments){ return arguments.split(" ")[0] })("@{arguments}")'; Get this working eventually
+    position: fixed;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+}
+.absolute(@top, @right, @bottom, @left){
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+}
+
+.strip-input(){
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.background-cover(){
+    background-position: center center;
+    background-size: cover;
+}
+
+.height(@height, @lineheight: auto){
+    height: @height;
+    line-height: @lineheight;
+}
+
+.size(@width, @height: auto, @lineheight: auto){
+    height: @height;
+    line-height: @lineheight;
+    width: @width;
+}
+
+.center(){
+    vertical-align: middle;
+    display: inline-block;
 }
