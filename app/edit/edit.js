@@ -2,8 +2,8 @@
 
 angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParams', '$firebase', function($scope, App, $routeParams, $firebase){
 
-    var devicesRef = new Firebase('https://watch-settings.firebaseio.com/apps/' + $routeParams.appId + '/settingsList');
-    $scope.fbSettings = $firebase(devicesRef);
+    // var devicesRef = new Firebase('https://watch-settings.firebaseio.com/apps/' + $routeParams.appId + '/settingsList');
+    // $scope.fbSettings = $firebase(devicesRef);
 
     $scope.app = App.findById($routeParams.appId);
 

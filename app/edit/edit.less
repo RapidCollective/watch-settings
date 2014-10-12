@@ -343,14 +343,16 @@
 }
 
 .add{
-    width: 20%;
+    width: 60px;
     float: left;
     position: relative;
     cursor: pointer;
+    text-align: center;
 
     .add-icon{
-        width: 100%;
-        padding-bottom: 100%;
+        width: 60px;
+        height: 40px;
+        line-height: 38px;
         background: #999;
         box-shadow: inset -1px 0 0 #ddd;
 
@@ -370,123 +372,38 @@
         }
 
         .icon{
-            position: absolute;
-            .transition(color 200ms linear);
-            .transition(background 200ms linear);
-            .transition(box-shadow 200ms linear);
 
-            .title-add&{
-                .font(32, 400);
-                text-align: center;
-                width: 100%;
-                text-decoration: underline;
-                margin: 9px 0 0;
-                color: #333;
+            img{
+                display: inline-block;
+                vertical-align: middle;
 
-                :hover&{
-                    color: #fff;
+                .title-add&{
+                    width: 28px /2;
+                    height: 38px /2;
+                }
+                .text-add&{
+                    width: 58px /2;
+                    height: 38px /2;
+                }
+                .toggle-add&{
+                    width: 56px /2;
+                    height: 32px /2;
+                }
+                .radio-add&{
+                    width: 12px /2;
+                    height: 56px /2;
+                }
+                .input-add&{
+                    width: 56px /2;
+                    height: 32px /2;
                 }
             }
-            .text-add&{
-                .font(28, 200);
-                text-align: center;
-                width: 100%;
-                margin: 12px 0 0;
-                color: #333;
-
-                :hover&{
-                    color: #fff;
-                }
-            }
-            .toggle-add&{
-                width: 64%;
-                box-shadow: inset 0 0 0 1px #333;
-                height: 26px;
-                margin: 17px 18%;
-                .border-radius(6px);
-
-                :hover&{
-                    box-shadow: inset 0 0 0 1px #fff;
-                }
-
-                div{
-                    position: absolute;
-                    width: 45%;
-                    height: 22px;
-                    background: #333;
-                    .border-radius(4px);
-                    right: 2px;
-                    top: 2px;
-
-                    .transition(background 200ms linear);
-
-                    :hover&{
-                        background: #fff;
-                    }
-                }
-            }
-            .radio-add&{
-                padding: 12px 0 6px 50%;
-                div{
-                    width: 10px;
-                    height: 10px;
-                    .border-radius(6px);
-                    box-shadow: inset 0 0 0 1px #333;
-                    margin: 0 0 2px -6px;
-
-                    .transition(box-shadow 200ms linear);
-
-                    :hover&{
-                        box-shadow: inset 0 0 0 1px #fff;
-                    }
-
-                    &:first-child{
-                        background: #333;
-
-                        .transition(background 200ms linear);
-                        .transition(box-shadow 200ms linear);
-
-                        :hover&{
-                            box-shadow: inset 0 0 0 1px #fff;
-                            background: #fff;
-                        }
-                    }
-                }
-            }
-
-            .input-add&{
-                width: 64%;
-                box-shadow: inset 0 0 0 1px #333;
-                height: 26px;
-                line-height: 26px;
-                margin: 17px 18%;
-                .border-radius(6px);
-                overflow: hidden;
-
-                :hover&{
-                    box-shadow: inset 0 0 0 1px #fff;
-                }
-
-                span{
-                    .font(17, 200);
-                    padding: 0 0 0 6px;
-                    color: #333;
-
-                    .transition(color 200ms linear);
-
-                    :hover&{
-                        color: #fff;
-                    }
-                }
-            }
-
         }
     }
     .add-label{
-        .font(12, 400);
-        color: #999;
-        text-align: center;
-        margin: 5px 0 0;
+        .font(13, 400);
+        color: #666;
+        margin: 4px 0 0;
     }
 }
 
