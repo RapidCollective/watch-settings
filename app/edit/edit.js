@@ -159,3 +159,14 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
         }
     }
 }])
+
+.directive('reviewTab', ['$location', '$timeout', function($location, $timeout) {
+    return {
+        restrict:'A',
+        controller: 'EditCtrl',
+        templateUrl: 'edit/review.html',
+        link: function(scope, element, attrs) {
+
+        }
+    }
+}])

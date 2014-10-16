@@ -67,12 +67,17 @@
     -o-transform+: translate(@x, @y);
     transform+: translate(@x, @y);
 }
-
+.line-height(@sizeValue) {
+    @remValue: @sizeValue / 10;
+    @pxValue: (@sizeValue);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+}
 .font-size(@sizeValue) {
-	@remValue: @sizeValue / 10;
-	@pxValue: (@sizeValue);
-	font-size: ~"@{pxValue}px";
-	font-size: ~"@{remValue}rem";
+    @remValue: @sizeValue / 10;
+    @pxValue: (@sizeValue);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
 }
 .font(@size: 15, @weight: 400, @lineheight: auto){
 	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
