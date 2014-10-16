@@ -29,20 +29,19 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
     $scope.settingsList = [{
         "type": "title",
         "data": {
-            "value": "Settings",
-            "id": "title-1"
+            "text": "Settings"
         }
     },
     {
         "type": "text",
         "data": {
-            "value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         }
     },
     {
         "type": "toggle",
         "data": {
-            "name": "Show Ads",
+            "text": "Show Ads",
             "id": "showAds"
         }
     }];
@@ -52,19 +51,19 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
         "title": {
             "type": "title",
             "data": {
-                "value": ""
+                "text": ""
             }
         },
         "text": {
             "type": "text",
             "data": {
-                "value": ""
+                "text": ""
             }
         },
         "toggle": {
             "type": "toggle",
             "data": {
-                "name": "",
+                "text": "",
                 "id": ""
             }
         },
@@ -72,11 +71,11 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
             "type": "radio",
             "data": {
                 "options": [{
-                    "name": "",
+                    "text": "",
                     "id": ""
                 },
                 {
-                    "name": "",
+                    "text": "",
                     "id": "",
                     "checked": ""
                 }]
@@ -114,6 +113,16 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
     $scope.app.$on('loaded', function(){
         $scope.name = $scope.app.name;
         $scope.landing = $scope.app.configuration.landing;
+
+        var injectorOptions = {
+            each: function (svg) {
+            // Callback after each SVG is injected
+            console.log('SVG injected: ' + svg.getAttribute('id'));
+            }
+        };
+
+        var svgs = $('img[data-inject="svg"]');
+        SVGInjector(svgs, injectorOptions);
     });
 
 }])

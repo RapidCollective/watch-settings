@@ -12,7 +12,7 @@
     </div>
 </div> -->
 
-<div class="edit">
+<div class="edit" ng-show="name">
 
     <div class="edit-navigation">
         <div class="navigation-switch">
@@ -60,7 +60,7 @@
                     <div class="screen-body" style="background-color: #{{landing.color}}">
 
                         <div class="body-image">
-                            <img class="image" ng-src="{{landing.image}}">
+                            <img class="image" data-inject="svg" src="{{landing.image}}">
                         </div>
 
                         <p class="body-copy">{{landing.copy}}</p>
@@ -83,7 +83,7 @@
 
                 <ul class="change-images">
                     <li class="image" ng-class="{ 'active-image' : landing.image === image}" ng-repeat="image in imageOptions" ng-click="changeImage(image)" style="background-color: #{{landing.color}}">
-                        <img ng-src="{{image}}">
+                        <img data-inject="svg" src="{{image}}">
                     </li>
                 </ul>
 
@@ -143,17 +143,17 @@
                             <li ng-repeat="list in settingsList" class="list {{list.type}}-list">
 
                                 <div ng-show="list.type == 'title'">
-                                    <div class="list-title">{{list.data.value}}</div>
+                                    <div class="list-title">{{list.data.text}}</div>
                                 </div>
 
                                 <div ng-show="list.type == 'text'">
-                                    <p class="list-text">{{list.data.value}}</p>
+                                    <p class="list-text">{{list.data.text}}</p>
                                 </div>
 
                                 <div ng-show="list.type == 'toggle'">
 
                                     <div class="list-toggle">
-                                        <div class="toggle-name">{{list.data.name}}</div>
+                                        <div class="toggle-name">{{list.data.text}}</div>
                                         <div class="toggle-switch">
                                             <input type="checkbox" id="switch" class="switch">
                                             <label for="switch" class="switch-bg" style="background: #{{landing.color}}">
@@ -168,7 +168,7 @@
                                     <ul>
                                         <li class="radio" ng-repeat="option in list.data.options">
 
-                                            <div class="radio-name">{{option.name}}</div>
+                                            <div class="radio-name">{{option.text}}</div>
                                             <input type="radio" name="color" value="{{option.id}}" checked="{{option.checked}}">
                                             <div class="radio-box" style="background: #{{landing.color}}"></div>
 
@@ -200,7 +200,7 @@
                     <li class="add title-add" ng-click="add('title')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img ng-src="images/edit-title.svg">
+                                <img data-inject="svg" src="images/edit-title.svg">
                             </div>
                         </div>
                         <div class="add-label">title</div>
@@ -208,7 +208,7 @@
                     <li class="add text-add" ng-click="add('text')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img ng-src="images/edit-text.svg">
+                                <img data-inject="svg" src="images/edit-text.svg">
                             </div>
                         </div>
                         <div class="add-label">text box</div>
@@ -216,7 +216,7 @@
                     <li class="add toggle-add" ng-click="add('toggle')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img ng-src="images/edit-toggle.svg">
+                                <img data-inject="svg" src="images/edit-toggle.svg">
                             </div>
                         </div>
                         <div class="add-label">toggle</div>
@@ -224,7 +224,7 @@
                     <li class="add radio-add" ng-click="add('radio')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img ng-src="images/edit-radio.svg">
+                                <img data-inject="svg" src="images/edit-radio.svg">
                             </div>
                         </div>
                         <div class="add-label">radio</div>
@@ -232,7 +232,7 @@
                     <li class="add input-add" ng-click="add('input')">
                         <div class="add-icon">
                             <div class="icon">
-                                <img ng-src="images/edit-input.svg">
+                                <img data-inject="svg" src="images/edit-input.svg">
                             </div>
                         </div>
                         <div class="add-label">input</div>
@@ -244,22 +244,22 @@
                     <li ng-repeat-reorder="setting in settingsList" ng-repeat-reorder-handle=".handle" class="setting {{setting.type}}-setting" ng-show="setting.type">
 
                         <div ng-show="setting.type == 'title'">
-                            <input type="text" class="title-input" placeholder="Title" ng-model="setting.data.value">
+                            <input type="text" class="title-input" placeholder="Title" ng-model="setting.data.text">
                         </div>
 
                         <div ng-show="setting.type == 'text'">
-                            <textarea class="text-textarea" placeholder="Paragraph text" ng-model="setting.data.value"></textarea>
+                            <textarea class="text-textarea" placeholder="Paragraph text" ng-model="setting.data.text"></textarea>
                         </div>
 
                         <div ng-show="setting.type == 'toggle'">
-                            <input type="text" class="toggle-name" placeholder="Toggle Name" ng-model="setting.data.name">
+                            <input type="text" class="toggle-name" placeholder="Toggle Name" ng-model="setting.data.text">
                             <input type="text" class="toggle-id" placeholder="ID" value="{{setting.data.id}}">
                         </div>
 
                         <div ng-show="setting.type == 'radio'">
                             <ul>
                                 <li class="radio" ng-repeat="option in setting.data.options">
-                                    <input type="text" class="radio-name" placeholder="Radio #1 Name" ng-model="option.name">
+                                    <input type="text" class="radio-name" placeholder="Radio #1 Name" ng-model="option.text">
                                     <input type="text" class="radio-id" placeholder="ID" value="{{option.id}}">
                                 </li>
                             </ul>

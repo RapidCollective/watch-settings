@@ -2,30 +2,46 @@
     "apps": {
         "watch-coffee": {
             "configuration": {
+                "color": "ef4121",
                 "landing": {
-                    "color": "ef4121",
                     "copy": "We need you to log into your Starbucks account so we can display your barcode.",
                     "image": "images/combo-lock.svg",
+                    "buttonName": "starbucks",
                     "lastSaved": "timestamp"
+                },
+                "oauth": {
+                    "serviceName": "Starbucks",
+                    "serviceUrl": "http://service.url/oauth",
+                    "lastSaved": "timestamp"
+                },
+                "settings": {
+                    "lastSaved": "timestamp",
+                    "settingsList": [
+                        {
+                            "type": "title",
+                            "data": {
+                                "text": "Settings"
+                            }
+                        },
+                        {
+                            "type": "text",
+                            "data": {
+                                "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            }
+                        },
+                        {
+                            "type": "toggle",
+                            "data": {
+                                "text": "Show Ads",
+                                "id": "showAds"
+                            }
+                        }
+                    ]
                 }
             },
             "id": "watch-coffee",
             "name": "Watch Coffee",
             "userRef": "simplelogin:30"
-        },
-        "ttmm": {
-            "configuration": {
-                "landing": {
-                    "copy": "We need you to log into your TTMM account so we can find your watch faces.",
-                    "image": "images/globe.svg",
-                    "lastSaved": "timestamp",
-                    "provider": "TTMM",
-                    "redirectHref": "https://blah.blah/oauth"
-                }
-            },
-            "id": "ttmm",
-            "name": "TTMM",
-            "userRef": "simplelogin:1"
         }
     },
     "users": {

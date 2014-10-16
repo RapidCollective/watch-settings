@@ -193,7 +193,7 @@
         .height(52px, 50px);
         display: block;
 
-        .active-tab&{
+        .active&{
             color: #666;
         }
     }
@@ -409,7 +409,7 @@
                     margin: 0 0 5%;
                 }
 
-                img{
+                img, svg{
                     opacity: .3;
                     position: absolute;
                     left: 50%;
@@ -475,7 +475,7 @@
         width: 60px;
         height: 40px;
         line-height: 38px;
-        background: #999;
+        background: #bbb;
         box-shadow: inset -1px 0 0 #ddd;
 
         :first-child&{
@@ -491,13 +491,28 @@
 
         :hover&{
             background: #333;
+
+            .icon svg{
+                fill: #fff;
+
+                g{
+                    fill: #fff;
+                }
+            }
         }
 
         .icon{
 
-            img{
+            svg, img{
                 display: inline-block;
                 vertical-align: middle;
+                fill: #333;
+                .transition(fill 200ms linear);
+
+                g{
+                    fill: #333;
+                    .transition(fill 200ms linear);
+                }
 
                 .title-add&{
                     width: 28px /2;
