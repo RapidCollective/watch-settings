@@ -12,43 +12,59 @@ html, body{
 .header{
     .clearfix();
     .height(54px, 54px);
+}
 
-    .header-logo{
+.header-logo{
+    float: left;
+    .clearfix();
+    width: 40%;
+    outline: none;
+
+    img, svg{
+        padding: 13px 0 0;
         float: left;
-        .clearfix();
-        width: 40%;
+        height: 28px;
+        width: 21px;
+        display: inline-block;
+        vertical-align: middle;
+        fill: #999;
 
-        img, svg{
-            padding: 13px 0 0;
-            float: left;
-            height: 28px;
-            width: 21px;
-            display: inline-block;
-            vertical-align: middle;
-            fill: #999;
-        }
+        .transition(fill 200ms linear);
 
-        h1{
-            float: left;
-            display: inline-block;
-            vertical-align: middle;
-            .font(20, 200);
-            text-transform: uppercase;
-            padding: 0 0 0 10px;
-            color: #999;
+        :hover&{
+            fill: #333;
         }
     }
-    .header-sign-in-up{
-        float: right;
 
-        a{
-            .font(17, 400);
-            color: #999;
-            padding: 0 0 0 20px;
+    h1{
+        float: left;
+        display: inline-block;
+        vertical-align: middle;
+        .font(20, 200);
+        text-transform: uppercase;
+        padding: 0 0 0 10px;
+        color: #999;
 
-            &:hover{
-                text-decoration: underline;
-            }
+        .transition(color 200ms linear);
+
+        :hover&{
+            color: #333;
+        }
+    }
+}
+
+.header-sign-in-up{
+    float: right;
+
+    a{
+        .font(17, 400);
+        color: #999;
+        padding: 0 0 0 20px;
+
+        .transition(color 200ms linear);
+
+        :hover&{
+            color: #333;
         }
     }
 }
