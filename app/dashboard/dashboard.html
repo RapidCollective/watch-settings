@@ -1,5 +1,29 @@
-Dashboard
+<div class="dashboard">
 
-<div ng-repeat="app in apps">
-    {{app.id}}
+    <ul class="dashboard-quick-start">
+        <li class="start settings-start">
+            <div class="start-images">
+                <img data-inject="svg" src="images/quick-start-settings.svg">
+            </div>
+            <div class="start-title">Add New Settings Page</div>
+            <p class="start-copy">Create a new settings page for an app.</p>
+        </li>
+        <li class="start oauth-start">
+            <div class="start-images">
+                <img data-inject="svg" src="images/quick-start-settings.svg">
+                <img data-inject="svg" src="images/quick-start-plus.svg">
+                <img data-inject="svg" src="images/quick-start-oauth.svg">
+            </div>
+            <div class="start-title">Settings Page with oAuth</div>
+            <p class="start-copy">Create a new settings page with oauth.</p>
+        </li>
+    </ul>
+
+
+</div>
+
+<div class="dashboard-repeat" ng-repeat="appRef in user.appsRef">
+    <a href="#/edit/{{apps[appRef].id}}">
+        {{apps[appRef].name}}
+    </a>
 </div>

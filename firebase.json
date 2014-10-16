@@ -48,7 +48,7 @@
         "simplelogin:1": {
             "appsRef": [ "ttmm" ],
             "email": "case@casesandberg.com",
-            "id": 30,
+            "id": 1,
             "provider": "password",
             "uid": "simplelogin:1"
         },

@@ -1,1 +1,71 @@
 @import '../global/mixins.less';
+
+
+.dashboard{
+
+}
+
+.dashboard-quick-start{
+    .clearfix();
+}
+
+.start{
+    width: 50%;
+    float: left;
+    text-align: center;
+    background-image: url('../images/quick-start-bg.png');
+    cursor: pointer;
+
+    &.settings-start{
+        background-color: #333;
+        box-shadow: inset -1px 0 0 0 #ddd;
+        .border-radius(6px 0 0 6px);
+
+        .transition(background 200ms linear);
+
+        :hover&{
+            background-color: #444;
+        }
+    }
+    &.oauth-start{
+        background-color: #3498DB;
+        background-position: top center;
+        .border-radius(0 6px 6px 0);
+
+        .transition(background 200ms linear);
+
+        :hover&{
+            background-color: lighten(#3498DB, 10%);
+        }
+    }
+    .start-images{
+        padding: 30px 0 0;
+
+        img, svg{
+            fill: #fff;
+            padding: 0 15px;
+        }
+    }
+    .start-title{
+        padding: 20px 0 0;
+        .font(24, 400);
+        color: #fff;
+    }
+    .start-copy{
+        margin: 0;
+        padding: 0 0 30px;
+        .font(15, 400);
+        color: rgba(0,0,0,.5);
+    }
+}
+
+.dashboard-repeat{
+
+    a{
+        display: block;
+        .height(54px, 54px);
+        .font(17, 400);
+        color: #999;
+        border-bottom: 1px solid #bbb;
+    }
+}

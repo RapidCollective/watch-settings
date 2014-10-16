@@ -5,6 +5,10 @@ angular.module('dashboard', []).controller('DashboardCtrl', ['$scope', 'App', 'U
     $scope.apps = App.getAll();
     $scope.user = User.findByUid('simplelogin:30');
 
+    $scope.apps.$on('loaded', function(){
+        SVGInjector($('img[data-inject="svg"]'));
+    });
+
 }])
 // .filter('hasPermission', ['User', 'App', function(User, App){
 //

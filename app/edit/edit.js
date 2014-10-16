@@ -114,15 +114,7 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
         $scope.name = $scope.app.name;
         $scope.landing = $scope.app.configuration.landing;
 
-        var injectorOptions = {
-            each: function (svg) {
-            // Callback after each SVG is injected
-            console.log('SVG injected: ' + svg.getAttribute('id'));
-            }
-        };
-
-        var svgs = $('img[data-inject="svg"]');
-        SVGInjector(svgs, injectorOptions);
+        SVGInjector($('img[data-inject="svg"]'));
     });
 
 }])
