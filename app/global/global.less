@@ -1,0 +1,53 @@
+@import '../global/mixins.less';
+
+html, body{
+    background: #ddd;
+}
+
+.wrap{
+    width: 690px;
+    margin: 0 auto;
+}
+
+.header{
+    .clearfix();
+    .height(54px, 54px);
+
+    .header-logo{
+        float: left;
+        .clearfix();
+        width: 40%;
+
+        img, svg{
+            padding: 13px 0 0;
+            float: left;
+            height: 28px;
+            width: 21px;
+            display: inline-block;
+            vertical-align: middle;
+            fill: #999;
+        }
+
+        h1{
+            float: left;
+            display: inline-block;
+            vertical-align: middle;
+            .font(20, 200);
+            text-transform: uppercase;
+            padding: 0 0 0 10px;
+            color: #999;
+        }
+    }
+    .header-sign-in-up{
+        float: right;
+
+        a{
+            .font(17, 400);
+            color: #999;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

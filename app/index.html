@@ -10,6 +10,7 @@
     <!-- inject:css -->
     <link href="global/reset.css" rel="stylesheet" />
     <link href="home/home.less" rel="stylesheet/less" />
+    <link href="global/global.less" rel="stylesheet/less" />
     <link href="dashboard/dashboard.less" rel="stylesheet/less" />
     <link href="edit/edit.less" rel="stylesheet/less" />
     <link href="edit/landing.less" rel="stylesheet/less" />
@@ -22,7 +23,22 @@
  -->
 </head>
 <body>
-    <div ng-view class="view"></div>
+
+    <div class="wrap">
+
+        <div class="header">
+            <div class="header-logo">
+                <img data-inject="svg" src="images/watch-settings-logo.svg">
+                <h1>watchsettings</h1>
+            </div>
+            <div class="header-sign-in-up">
+                <a href="">Your Account</a>
+            </div>
+        </div>
+
+        <div ng-view class="view"></div>
+
+    </div>
 
     <!-- inject:js -->
 
