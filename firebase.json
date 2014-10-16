@@ -1,6 +1,7 @@
 {
     "apps": {
         "watch-coffee": {
+            "type": "oauth",
             "configuration": {
                 "color": "ef4121",
                 "landing": {

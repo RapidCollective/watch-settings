@@ -34,8 +34,12 @@ watchSettings.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'edit/edit.html',
 		controller: 'EditCtrl'
 	})
+	.when('/edit/:appId/', {
+		templateUrl: 'edit/edit.html',
+		controller: 'EditCtrl'
+	})
     .otherwise({
-        redirectTo: '/'
+        redirectTo: '/dashboard'
     });
 
 }]);

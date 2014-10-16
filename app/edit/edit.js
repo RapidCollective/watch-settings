@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParams', '$firebase', function($scope, App, $routeParams, $firebase){
+angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParams', '$firebase', '$location', function($scope, App, $routeParams, $firebase, $location){
 
     // var devicesRef = new Firebase('https://watch-settings.firebaseio.com/apps/' + $routeParams.appId + '/settingsList');
     // $scope.fbSettings = $firebase(devicesRef);
@@ -111,6 +111,13 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
     }
 
     $scope.app.$on('loaded', function(){
+
+        if(!$routeParams.tab && $scope.app.type == 'oauth'){
+            $location.path('/edit/' + $scope.app.id + '/landing')
+        } else if (!$routeParams.tab) {
+            $location.path('/edit/' + $scope.app.id + '/settings')
+        }
+
         $scope.name = $scope.app.name;
         $scope.landing = $scope.app.configuration.landing;
 
