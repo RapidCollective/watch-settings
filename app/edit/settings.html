@@ -1,0 +1,161 @@
+<div class="page-sim">
+    <div class="sim-screen">
+        <div class="screen-head">
+            <div class="head-title">{{name}}</div>
+        </div>
+
+        <div class="screen-body">
+
+            <ul class="body-lists">
+
+                <li ng-repeat="list in settingsList" class="list {{list.type}}-list">
+
+                    <div ng-show="list.type == 'title'">
+                        <div class="list-title">{{list.data.text}}</div>
+                    </div>
+
+                    <div ng-show="list.type == 'text'">
+                        <p class="list-text">{{list.data.text}}</p>
+                    </div>
+
+                    <div ng-show="list.type == 'toggle'">
+
+                        <div class="list-toggle">
+                            <div class="toggle-name">{{list.data.text}}</div>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="switch" class="switch">
+                                <label for="switch" class="switch-bg" style="background: #{{landing.color}}">
+                                    <span class="switch-tab"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div ng-show="list.type == 'radio'" class="list-radio">
+                        <ul>
+                            <li class="radio" ng-repeat="option in list.data.options">
+
+                                <div class="radio-name">{{option.text}}</div>
+                                <input type="radio" name="color" value="{{option.id}}" checked="{{option.checked}}">
+                                <div class="radio-box" style="background: #{{landing.color}}"></div>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div ng-show="list.type == 'input'" class="list-input">
+                        <input type="text" class="input" placeholder="{{list.data.placeholder}}">
+                    </div>
+
+                    <div class="handle">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="page-change">
+
+    <div class="label">Add Items</div>
+
+    <ul class="change-add">
+        <li class="add title-add" ng-click="add('title')">
+            <div class="add-icon">
+                <div class="icon">
+                    <img data-inject="svg" src="images/edit-title.svg">
+                </div>
+            </div>
+            <div class="add-label">title</div>
+        </li>
+        <li class="add text-add" ng-click="add('text')">
+            <div class="add-icon">
+                <div class="icon">
+                    <img data-inject="svg" src="images/edit-text.svg">
+                </div>
+            </div>
+            <div class="add-label">text box</div>
+        </li>
+        <li class="add toggle-add" ng-click="add('toggle')">
+            <div class="add-icon">
+                <div class="icon">
+                    <img data-inject="svg" src="images/edit-toggle.svg">
+                </div>
+            </div>
+            <div class="add-label">toggle</div>
+        </li>
+        <li class="add radio-add" ng-click="add('radio')">
+            <div class="add-icon">
+                <div class="icon">
+                    <img data-inject="svg" src="images/edit-radio.svg">
+                </div>
+            </div>
+            <div class="add-label">radio</div>
+        </li>
+        <li class="add input-add" ng-click="add('input')">
+            <div class="add-icon">
+                <div class="icon">
+                    <img data-inject="svg" src="images/edit-input.svg">
+                </div>
+            </div>
+            <div class="add-label">input</div>
+        </li>
+    </ul>
+
+    <ul class="change-list-settings">
+
+        <li ng-repeat-reorder="setting in settingsList" ng-repeat-reorder-handle=".handle" class="setting {{setting.type}}-setting" ng-show="setting.type">
+
+            <div ng-show="setting.type == 'title'">
+                <input type="text" class="title-input" placeholder="Title" ng-model="setting.data.text">
+            </div>
+
+            <div ng-show="setting.type == 'text'">
+                <textarea class="text-textarea" placeholder="Paragraph text" ng-model="setting.data.text"></textarea>
+            </div>
+
+            <div ng-show="setting.type == 'toggle'">
+                <input type="text" class="toggle-name" placeholder="Toggle Name" ng-model="setting.data.text">
+                <input type="text" class="toggle-id" placeholder="ID" value="{{setting.data.id}}">
+            </div>
+
+            <div ng-show="setting.type == 'radio'">
+                <ul>
+                    <li class="radio" ng-repeat="option in setting.data.options">
+                        <input type="text" class="radio-name" placeholder="Radio #1 Name" ng-model="option.text">
+                        <input type="text" class="radio-id" placeholder="ID" value="{{option.id}}">
+                    </li>
+                </ul>
+            </div>
+
+            <div ng-show="setting.type == 'input'">
+                <input type="text" class="input-placeholder" placeholder="Placeholder" ng-model="setting.data.placeholder">
+                <input type="text" class="input-id" placeholder="ID" value="{{setting.data.id}}">
+            </div>
+
+            <div class="handle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="delete" ng-click="delete($index)">
+                <span>✕</span>
+            </div>
+        </li>
+    </ul>
+
+
+</div>
+
+
+<div class="save-setttings">
+
+    <a href="">SAVE</a>
+
+</div>

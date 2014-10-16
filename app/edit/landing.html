@@ -1,0 +1,45 @@
+<div class="page-sim">
+    <div class="sim-screen">
+        <div class="screen-head">
+            <div class="head-title">{{name}}</div>
+        </div>
+
+        <div class="screen-body" style="background-color: #{{landing.color}}">
+
+            <div class="body-image">
+                <img class="image" data-inject="svg" src="{{landing.image}}">
+            </div>
+
+            <p class="body-copy">{{landing.copy}}</p>
+
+            <a href="" class="body-cta">Sign In<span ng-show="landing.provider">to {{landing.provider}}</span></a>
+
+        </div>
+    </div>
+</div>
+
+<div class="page-change">
+
+    <div class="label">Settings Color</div>
+
+    <ul class="change-colors">
+        <li class="color" ng-class="{ 'active-color' : landing.color === color}" ng-repeat="color in colorOptions" ng-click="changeColor(color)" style="background-color: #{{color}}"></li>
+    </ul>
+
+    <div class="label">Landing Image</div>
+
+    <ul class="change-images">
+        <li class="image" ng-class="{ 'active-image' : landing.image === image}" ng-repeat="image in imageOptions" ng-click="changeImage(image)" style="background-color: #{{landing.color}}">
+            <img data-inject="svg" src="{{image}}">
+        </li>
+    </ul>
+
+    <div class="label">Landing Description</div>
+
+    <textarea ng-model="landing.copy" class="change-copy"></textarea>
+
+    <div class="label">Oauth Service</div>
+
+    <input type="text" ng-model="landing.provider" class="change-provider" placeholder="Service Name">
+    <input type="text" ng-model="landing.redirectHref" class="change-redirect" placeholder="http://service.com/oauth">
+</div>

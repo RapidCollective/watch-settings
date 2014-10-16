@@ -126,3 +126,36 @@ angular.module('edit', []).controller('EditCtrl', ['$scope', 'App', '$routeParam
     });
 
 }])
+
+.directive('landingTab', ['$location', '$timeout', function($location, $timeout) {
+    return {
+        restrict:'A',
+        controller: 'EditCtrl',
+        templateUrl: 'edit/landing.html',
+        link: function(scope, element, attrs) {
+
+        }
+    }
+}])
+
+.directive('oauthTab', ['$location', '$timeout', function($location, $timeout) {
+    return {
+        restrict:'A',
+        controller: 'EditCtrl',
+        templateUrl: 'edit/oauth.html',
+        link: function(scope, element, attrs) {
+
+        }
+    }
+}])
+
+.directive('settingsTab', ['$location', '$timeout', function($location, $timeout) {
+    return {
+        restrict:'A',
+        controller: 'EditCtrl',
+        templateUrl: 'edit/settings.html',
+        link: function(scope, element, attrs) {
+
+        }
+    }
+}])

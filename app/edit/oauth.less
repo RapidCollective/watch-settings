@@ -1,0 +1,54 @@
+@import '../global/mixins.less';
+
+.screen-body{
+
+    .body-iframe-cover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .body-iframe{
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        .border-radius(6px);
+    }
+}
+
+
+.page-change{
+
+    .oauth-page&{
+        margin-top: 240px;
+    }
+
+    .change-provider{
+        width: 92%;
+        padding: 0 4%;
+        margin: 0 0 1px;
+        .border-radius(6px 6px 0 0);
+    }
+    .change-service-url{
+        width: 92%;
+        padding: 0 4%;
+        .border-radius(0 0 6px 6px);
+        margin: 0 0 20px;
+    }
+
+    .change-redirect{
+        width: 92%;
+        padding: 0 4%;
+        .border-radius(6px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

@@ -1,0 +1,27 @@
+<div class="page-sim">
+    <div class="sim-screen">
+        <div class="screen-head">
+            <div class="head-title">{{name}}</div>
+        </div>
+
+        <div class="screen-body" style="background-color: #{{landing.color}}">
+
+            <iframe class="body-iframe" src="https://connect.starbucks.com/OAuth/sign-in"></iframe>
+            <div class="body-iframe-cover"></div>
+
+        </div>
+    </div>
+</div>
+
+<div class="page-change">
+
+    <div class="label">Oauth Service</div>
+
+    <input type="text" ng-model="landing.provider" class="change-provider" placeholder="Service Name">
+    <input type="text" ng-model="landing.redirectHref" class="change-service-url" placeholder="http://service.com/oauth">
+
+    <div class="label">Redirect URL</div>
+
+    <input type="text" class="change-redirect" value="http://{{app.id}}.watchsettings.com/settings" readonly>
+
+</div>
