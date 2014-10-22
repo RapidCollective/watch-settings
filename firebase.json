@@ -34,7 +34,38 @@
                             "type": "toggle",
                             "data": {
                                 "text": "Show Ads",
-                                "id": "showAds"
+                                "id": "showAds",
+                                "value": "true"
+                            }
+                        },
+                        {
+                            "type": "input",
+                            "data": {
+                                "placeholder": "First Name",
+                                "id": "firstName",
+                                "value": "Chris"
+                            }
+                        },
+                        {
+                            "type": "input",
+                            "data": {
+                                "placeholder": "Age",
+                                "id": "age",
+                                "value": "13"
+                            }
+                        },
+                        {
+                            "type": "radio",
+                            "data": {
+                                "text": "Pick A Color",
+                                "id": "color",
+                                "buttons": {
+                                  "RED": "Red",
+                                  "BLUE": "Blue",
+                                  "GREEN": "Green",
+                                  "YELLOW": "Yellow"
+                                },
+                                "selected": "RED"
                             }
                         }
                     ]

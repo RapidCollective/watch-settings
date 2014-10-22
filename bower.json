@@ -23,7 +23,9 @@
     "angular-touch": "~1.2.18",
     "angular-gestures": "~0.2.3",
     "angular-google-analytics": "~0.0.3",
-    "svg-injector": "~1.1.0"
+    "svg-injector": "~1.1.0",
+    "angular-hammer": "~1.2.4",
+    "ngRepeatReorder": "~0.1.1"
   },
   "ignore": [
     "**/.*",
@@ -31,5 +33,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "resolutions": {
+    "hammerjs": "~1.1.3"
+  }
 }
