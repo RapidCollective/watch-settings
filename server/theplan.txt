@@ -1,0 +1,77 @@
+appInfo.json <-> firebase
+autoconfig.py <-> node
+autoconfig.html.jinja <-> template.html (handlebars)
+
+
+It should work like this:
+The developer creates their page in the web browser, and then from that we generate:
+- hosted HTML file
+- hosted minified JS file
+- hosted minified CSS file
+- autoconfig.c
+- autoconfig.h
+- autoconfig.js (PebbleKit JS appmessage code)
+
+- appinfo.json copypasta
+  - This is:
+    "capabilities": ["configurable"],
+    "appKeys": {
+        "background": 0,
+        "direction": 1,
+        "length": 2,
+        "ipaddress": 3,
+        "ping" : 100,
+        "pong" : 101
+    },
+    "settingsUrl": "http://wiki.pebble-autoconfig.googlecode.com/git/example/autoconfig.html",
+- main.c copypasta
+  - This is:
+    #include <pebble.h>
+    #include "autoconfig.h"
+
+    //*Uncomment for example app
+    //static Window *window;
+
+    static void in_received_handler(DictionaryIterator *iter, void *context) {
+        // Let Pebble Autoconfig handle received settings
+        autoconfig_in_received_handler(iter, context);
+
+        // Here the updated settings are available
+        APP_LOG(APP_LOG_LEVEL_DEBUG, "Configuration updated. Background: %s Direction: %d Length: %d IP address: %s",
+                getBackground() ? "true" : "false", getDirection(), (int)getLength(), getIpaddress());
+
+        //*This is where you will want to update your screen or trigger code to run when updated settings are avalible
+    }
+
+
+    static void init(void) {
+        // Initialize Pebble Autoconfig to register App Message handlers and restores settings
+        autoconfig_init();
+
+        // Here the restored or defaulted settings are available
+        APP_LOG(APP_LOG_LEVEL_DEBUG, "Configuration restored. Background: %s Direction: %d Length: %d IP address: %s",
+                getBackground() ? "true" : "false", getDirection(), (int)getLength(), getIpaddress());
+
+        // Register our custom receive handler which in turn will call Pebble Autoconfigs receive handler
+        app_message_register_inbox_received(in_received_handler);
+
+
+        //*Uncomment for example app
+        //window = window_create();
+        //window_stack_push(window, true);
+    }
+
+    static void deinit(void) {
+        //*Uncomment for example app
+        //window_destroy(window);
+
+        // Let Pebble Autoconfig write settings to Pebbles persistant memory
+        autoconfig_deinit();
+    }
+
+    int main(void) {
+        init();
+        //*Uncomment for example app
+        //app_event_loop();
+        deinit();
+    }
